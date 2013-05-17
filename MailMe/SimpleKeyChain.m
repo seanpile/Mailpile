@@ -1,9 +1,5 @@
 //
-//  SPSimpleKeyChain.m
-//  Simperium
-//
-//  Created by Michael Johnston on 12-08-01.
-//  Copyright (c) 2012 Simperium. All rights reserved.
+// See Stackoverflow for Keychain implementation:
 //
 // http://stackoverflow.com/questions/5247912/saving-email-password-to-keychain-in-ios/5251820#5251820
 

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MailCore/MailCore.h>
 
 @interface MailMeConfig : NSObject <NSCoding>
 
@@ -15,11 +16,13 @@
 @property (nonatomic, strong) NSString *hostname;
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *password;
-@property (nonatomic) BOOL useSSL;
+@property (nonatomic) BOOL useAuth;
+@property (nonatomic) CTSMTPConnectionType connectionType;
 @property (nonatomic) NSUInteger port;
 
 - (void)           saveToKeychain;
 + (MailMeConfig *) loadFromKeychain;
++ (void)           clearKeychain;
 - (BOOL)           isValid;
 
 @end

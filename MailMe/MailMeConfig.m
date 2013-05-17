@@ -12,7 +12,7 @@
 
 @implementation MailMeConfig
 
-@synthesize name, email, hostname, username, password, useSSL, port;
+@synthesize name, email, hostname, username, password, useAuth, connectionType, port;
 
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {
@@ -26,8 +26,10 @@
                   forKey:@"username"];
     [aCoder encodeObject:password
                   forKey:@"password"];
-    [aCoder encodeBool:useSSL
-                forKey:@"useSSL"];
+    [aCoder encodeBool:useAuth
+                forKey:@"useAuth"];
+    [aCoder encodeInt:connectionType
+               forKey:@"connectionType"];
     [aCoder encodeInteger:port
                    forKey:@"port"];
 }
@@ -40,7 +42,8 @@
     [config setHostname:[aDecoder decodeObjectForKey:@"hostname"]];
     [config setUsername:[aDecoder decodeObjectForKey:@"username"]];
     [config setPassword:[aDecoder decodeObjectForKey:@"password"]];
-    [config setUseSSL:[aDecoder decodeBoolForKey:@"useSSL"]];
+    [config setUseAuth:[aDecoder decodeBoolForKey:@"useAuth"]];
+    [config setConnectionType:[aDecoder decodeIntForKey:@"connectionType"]];
     [config setPort:[aDecoder decodeIntegerForKey:@"port"]];
     return config;
 }
@@ -53,7 +56,8 @@
     [desc appendString:[NSString stringWithFormat:@"email = \"%@\", ", email]];
     [desc appendString:[NSString stringWithFormat:@"hostname = \"%@\", ", hostname]];
     [desc appendString:[NSString stringWithFormat:@"username = \"%@\", ", username]];
-    [desc appendString:[NSString stringWithFormat:@"useSSL = %d, ", useSSL]];
+    [desc appendString:[NSString stringWithFormat:@"useAuth = %d, ", useAuth]];
+    [desc appendString:[NSString stringWithFormat:@"connectionType = %d, ", connectionType]];
     [desc appendString:[NSString stringWithFormat:@"port = %d", port]];
     [desc appendString:@"}"];
     return desc;
@@ -69,6 +73,11 @@
     MWLogDebug(@"Saving config to keychain: %@", self);
     [SimpleKeychain save:@"MailMeConfig"
                     data:self];
+}
+
++ (void) clearKeychain
+{
+    [SimpleKeychain delete:@"MailMeConfig"];
 }
 
 + (MailMeConfig *) loadFromKeychain

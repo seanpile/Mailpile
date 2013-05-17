@@ -21,40 +21,57 @@
 @implementation MailMeViewController
 
 @synthesize mailField, emailLabel, sendButton;
-@synthesize progressView, progressViewIndicator;
+@synthesize misconfiguredView, progressView, progressViewIndicator;
 
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    [mailField becomeFirstResponder];
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                         action:@selector(hideKeyboard)];
     [self.tableView
      addGestureRecognizer:gestureRecognizer];
     
-    config = [MailMeConfig loadFromKeychain];
-    MWLogDebug(@"%@", config);
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                action:@selector(clearText)];
+    [doubleTap setNumberOfTapsRequired:2];
+    [self.tableView
+     addGestureRecognizer:doubleTap];
     
-    if (![config isValid])
-    {
-        [self performSegueWithIdentifier:@"ConfigureMail" sender:self];
-    }
-}
-
-- (void) didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    config = [MailMeConfig loadFromKeychain];
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
+    [[self navigationController] setToolbarHidden:YES];
+    
     NSString *email = [config email];
     if (email)
     {
         [emailLabel setText:email];
     }
+    
+    if (!config || ![config isValid])
+    {
+        [misconfiguredView setAlpha:1.0];
+        [sendButton setEnabled:NO];
+        [mailField resignFirstResponder];
+        [mailField setEditable:NO];
+    }
+    else
+    {
+        [misconfiguredView setAlpha:0.0];
+        [sendButton setEnabled:YES];
+        [mailField becomeFirstResponder];
+        [mailField setEditable:YES];
+    }
+}
+
+- (void) clearText
+{
+    [mailField setText:@""];
 }
 
 - (void) hideKeyboard
@@ -71,7 +88,6 @@
 
 - (void) setConfig:(MailMeConfig *)c
 {
-    MWLogDebug(@"Setting configuration: %@", c);
     config = c;
 }
 
@@ -101,10 +117,10 @@
         MWLogInfo(@"Attempting to send with config: %@", config);
         
         CTCoreMessage *msg = [[CTCoreMessage alloc] init];
-        [msg setTo:[NSSet setWithObject:[CTCoreAddress addressWithName:[config name]
-                                                                 email:[config email]]]];
-        [msg setFrom:[NSSet setWithObject:[CTCoreAddress addressWithName:[config name]
-                                                                   email:[config email]]]];
+        CTCoreAddress *address = [CTCoreAddress addressWithName:[config name]
+                                                          email:[config email]];
+        [msg setTo:[NSSet setWithObject:address]];
+        [msg setFrom:[NSSet setWithObject:address]];
         [msg setSubject:messageBody];
         [msg setBody:@""];
         
@@ -116,9 +132,11 @@
                                             username:[config username]
                                             password:[config password]
                                                 port:[config port]
-                                      connectionType:([config useSSL] ? CTSMTPConnectionTypeStartTLS : CTSMTPConnectionTypePlain)
-                                             useAuth:YES
+                                      connectionType:[config connectionType]
+                                             useAuth:[config useAuth]
                                                error:&error];
+        address = nil;
+        msg = nil;
         
         if (!success)
         {
@@ -126,7 +144,7 @@
         }
         else
         {
-            MWLogInfo(@"Sent message to %@", [config email]);
+            MWLogDebug(@"Sent message to %@", [config email]);
         }
         
         // Dispatch back to the main queue to update the UI

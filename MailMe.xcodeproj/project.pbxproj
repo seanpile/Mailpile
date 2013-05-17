@@ -13,17 +13,12 @@
 		16271ED8174318DC0018808F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16271ED6174318DC0018808F /* InfoPlist.strings */; };
 		16271EDA174318DD0018808F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16271ED9174318DD0018808F /* main.m */; };
 		16271EDE174318DD0018808F /* MailMeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16271EDD174318DD0018808F /* MailMeAppDelegate.m */; };
-		16271EE0174318DD0018808F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 16271EDF174318DD0018808F /* Default.png */; };
-		16271EE2174318DD0018808F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16271EE1174318DD0018808F /* Default@2x.png */; };
-		16271EE4174318DD0018808F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16271EE3174318DD0018808F /* Default-568h@2x.png */; };
 		16271EED174318DD0018808F /* MailMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16271EEC174318DD0018808F /* MailMeViewController.m */; };
 		16316C4717431C5400FC2060 /* MailMeStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16316C4517431C5400FC2060 /* MailMeStoryboard_iPhone.storyboard */; };
 		16316C491743212000FC2060 /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 16316C481743212000FC2060 /* Delete.png */; };
 		16316C4B1743212A00FC2060 /* Delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16316C4A1743212A00FC2060 /* Delete@2x.png */; };
 		16316C4E1743BC7700FC2060 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 16316C4C1743BC7700FC2060 /* Settings.png */; };
 		16316C4F1743BC7700FC2060 /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16316C4D1743BC7700FC2060 /* Settings@2x.png */; };
-		16316C511743C06D00FC2060 /* UIButtonBarContactAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = 16316C501743C06D00FC2060 /* UIButtonBarContactAdd.png */; };
-		16316C531743C09500FC2060 /* UIButtonBarContactAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16316C521743C09500FC2060 /* UIButtonBarContactAdd@2x.png */; };
 		16316C6F1743CEB000FC2060 /* libmailcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16316C6C1743CE7400FC2060 /* libmailcore.a */; };
 		16316C711743CEBB00FC2060 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16316C701743CEBA00FC2060 /* libssl.a */; };
 		16316C731743CEC300FC2060 /* libsasl2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16316C721743CEC300FC2060 /* libsasl2.a */; };
@@ -35,8 +30,14 @@
 		16316C831743D30A00FC2060 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16316C821743D30A00FC2060 /* Security.framework */; };
 		16316C861743D75300FC2060 /* MailMeConfgurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16316C851743D75300FC2060 /* MailMeConfgurationViewController.m */; };
 		16316C891743DD8800FC2060 /* MailMeConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 16316C881743DD8800FC2060 /* MailMeConfig.m */; };
-		16316C8D17444E4F00FC2060 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 16316C8C17444E4F00FC2060 /* Icon.png */; };
-		16316C8F17445A9800FC2060 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16316C8E17445A9800FC2060 /* Icon@2x.png */; };
+		16316C91174503AD00FC2060 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 16316C90174503AD00FC2060 /* iTunesArtwork.png */; };
+		16316C931745047A00FC2060 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16316C921745047900FC2060 /* iTunesArtwork@2x.png */; };
+		16316C9917450CA600FC2060 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 16316C9817450CA500FC2060 /* Default.png */; };
+		16316C9B17450E4300FC2060 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16316C9A17450E4300FC2060 /* Default@2x.png */; };
+		16316CA117450F5C00FC2060 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16316CA017450F5B00FC2060 /* Default-568h@2x.png */; };
+		169E1328174662BB0064C834 /* MailMeConnectionTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 169E1327174662BB0064C834 /* MailMeConnectionTypeViewController.m */; };
+		16D6C68517450FEB007B0292 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D6C68317450FEB007B0292 /* Icon.png */; };
+		16D6C68617450FEB007B0292 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D6C68417450FEB007B0292 /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,9 +82,6 @@
 		16271EDB174318DD0018808F /* MailMe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MailMe-Prefix.pch"; sourceTree = "<group>"; };
 		16271EDC174318DD0018808F /* MailMeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MailMeAppDelegate.h; sourceTree = "<group>"; };
 		16271EDD174318DD0018808F /* MailMeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MailMeAppDelegate.m; sourceTree = "<group>"; };
-		16271EDF174318DD0018808F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		16271EE1174318DD0018808F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		16271EE3174318DD0018808F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		16271EEB174318DD0018808F /* MailMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MailMeViewController.h; sourceTree = "<group>"; };
 		16271EEC174318DD0018808F /* MailMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MailMeViewController.m; sourceTree = "<group>"; };
 		16316C4617431C5400FC2060 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MailMeStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
@@ -91,12 +89,10 @@
 		16316C4A1743212A00FC2060 /* Delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Delete@2x.png"; sourceTree = "<group>"; };
 		16316C4C1743BC7700FC2060 /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
 		16316C4D1743BC7700FC2060 /* Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@2x.png"; sourceTree = "<group>"; };
-		16316C501743C06D00FC2060 /* UIButtonBarContactAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIButtonBarContactAdd.png; sourceTree = "<group>"; };
-		16316C521743C09500FC2060 /* UIButtonBarContactAdd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarContactAdd@2x.png"; sourceTree = "<group>"; };
 		16316C5E1743CE7100FC2060 /* MailCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MailCore.xcodeproj; path = ../../lib/MailCore/MailCore.xcodeproj; sourceTree = "<group>"; };
-		16316C701743CEBA00FC2060 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libssl.a; path = "../../lib/MailCore/iOSPorts/ports/security/openssl/build/Release-iphoneos/libssl.a"; sourceTree = "<group>"; };
-		16316C721743CEC300FC2060 /* libsasl2.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libsasl2.a; path = "../../lib/MailCore/iOSPorts/ports/security/cyrus-sasl/build/Release-iphoneos/libsasl2.a"; sourceTree = "<group>"; };
-		16316C741743CED100FC2060 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libcrypto.a; path = "../../lib/MailCore/iOSPorts/ports/security/openssl/build/Release-iphoneos/libcrypto.a"; sourceTree = "<group>"; };
+		16316C701743CEBA00FC2060 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../../lib/MailCore/iOSPorts/ports/security/openssl/build/Release-iphoneos/libssl.a"; sourceTree = "<group>"; };
+		16316C721743CEC300FC2060 /* libsasl2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsasl2.a; path = "../../lib/MailCore/iOSPorts/ports/security/cyrus-sasl/build/Release-iphoneos/libsasl2.a"; sourceTree = "<group>"; };
+		16316C741743CED100FC2060 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../../lib/MailCore/iOSPorts/ports/security/openssl/build/Release-iphoneos/libcrypto.a"; sourceTree = "<group>"; };
 		16316C761743CEF800FC2060 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		16316C781743CEFE00FC2060 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		16316C7C1743D03100FC2060 /* MWLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWLogging.h; sourceTree = "<group>"; };
@@ -108,8 +104,15 @@
 		16316C851743D75300FC2060 /* MailMeConfgurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailMeConfgurationViewController.m; sourceTree = "<group>"; };
 		16316C871743DD8800FC2060 /* MailMeConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailMeConfig.h; sourceTree = "<group>"; };
 		16316C881743DD8800FC2060 /* MailMeConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailMeConfig.m; sourceTree = "<group>"; };
-		16316C8C17444E4F00FC2060 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
-		16316C8E17445A9800FC2060 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+		16316C90174503AD00FC2060 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		16316C921745047900FC2060 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		16316C9817450CA500FC2060 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		16316C9A17450E4300FC2060 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		16316CA017450F5B00FC2060 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		169E1326174662BB0064C834 /* MailMeConnectionTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailMeConnectionTypeViewController.h; sourceTree = "<group>"; };
+		169E1327174662BB0064C834 /* MailMeConnectionTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailMeConnectionTypeViewController.m; sourceTree = "<group>"; };
+		16D6C68317450FEB007B0292 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		16D6C68417450FEB007B0292 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +139,6 @@
 		16271EC1174318DC0018808F = {
 			isa = PBXGroup;
 			children = (
-				16316C821743D30A00FC2060 /* Security.framework */,
 				16316C5E1743CE7100FC2060 /* MailCore.xcodeproj */,
 				16271ED3174318DC0018808F /* MailMe */,
 				16271ECC174318DC0018808F /* Frameworks */,
@@ -155,6 +157,7 @@
 		16271ECC174318DC0018808F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				16316C821743D30A00FC2060 /* Security.framework */,
 				16316C781743CEFE00FC2060 /* CFNetwork.framework */,
 				16316C761743CEF800FC2060 /* libiconv.dylib */,
 				16316C741743CED100FC2060 /* libcrypto.a */,
@@ -179,6 +182,8 @@
 				16271EEC174318DD0018808F /* MailMeViewController.m */,
 				16316C841743D75300FC2060 /* MailMeConfgurationViewController.h */,
 				16316C851743D75300FC2060 /* MailMeConfgurationViewController.m */,
+				169E1326174662BB0064C834 /* MailMeConnectionTypeViewController.h */,
+				169E1327174662BB0064C834 /* MailMeConnectionTypeViewController.m */,
 				16316C871743DD8800FC2060 /* MailMeConfig.h */,
 				16316C881743DD8800FC2060 /* MailMeConfig.m */,
 				16316C7F1743D2C500FC2060 /* SimpleKeyChain.h */,
@@ -191,10 +196,10 @@
 		16271ED4174318DC0018808F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				16316C8E17445A9800FC2060 /* Icon@2x.png */,
-				16316C8C17444E4F00FC2060 /* Icon.png */,
-				16316C501743C06D00FC2060 /* UIButtonBarContactAdd.png */,
-				16316C521743C09500FC2060 /* UIButtonBarContactAdd@2x.png */,
+				16D6C68317450FEB007B0292 /* Icon.png */,
+				16D6C68417450FEB007B0292 /* Icon@2x.png */,
+				16316C90174503AD00FC2060 /* iTunesArtwork.png */,
+				16316C921745047900FC2060 /* iTunesArtwork@2x.png */,
 				16316C481743212000FC2060 /* Delete.png */,
 				16316C4A1743212A00FC2060 /* Delete@2x.png */,
 				16316C4C1743BC7700FC2060 /* Settings.png */,
@@ -203,9 +208,9 @@
 				16271ED6174318DC0018808F /* InfoPlist.strings */,
 				16271ED9174318DD0018808F /* main.m */,
 				16271EDB174318DD0018808F /* MailMe-Prefix.pch */,
-				16271EDF174318DD0018808F /* Default.png */,
-				16271EE1174318DD0018808F /* Default@2x.png */,
-				16271EE3174318DD0018808F /* Default-568h@2x.png */,
+				16316C9817450CA500FC2060 /* Default.png */,
+				16316C9A17450E4300FC2060 /* Default@2x.png */,
+				16316CA017450F5B00FC2060 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -304,18 +309,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				16271ED8174318DC0018808F /* InfoPlist.strings in Resources */,
-				16271EE0174318DD0018808F /* Default.png in Resources */,
-				16271EE2174318DD0018808F /* Default@2x.png in Resources */,
-				16271EE4174318DD0018808F /* Default-568h@2x.png in Resources */,
 				16316C4717431C5400FC2060 /* MailMeStoryboard_iPhone.storyboard in Resources */,
 				16316C491743212000FC2060 /* Delete.png in Resources */,
 				16316C4B1743212A00FC2060 /* Delete@2x.png in Resources */,
 				16316C4E1743BC7700FC2060 /* Settings.png in Resources */,
 				16316C4F1743BC7700FC2060 /* Settings@2x.png in Resources */,
-				16316C511743C06D00FC2060 /* UIButtonBarContactAdd.png in Resources */,
-				16316C531743C09500FC2060 /* UIButtonBarContactAdd@2x.png in Resources */,
-				16316C8D17444E4F00FC2060 /* Icon.png in Resources */,
-				16316C8F17445A9800FC2060 /* Icon@2x.png in Resources */,
+				16316C91174503AD00FC2060 /* iTunesArtwork.png in Resources */,
+				16316C931745047A00FC2060 /* iTunesArtwork@2x.png in Resources */,
+				16316C9917450CA600FC2060 /* Default.png in Resources */,
+				16316C9B17450E4300FC2060 /* Default@2x.png in Resources */,
+				16316CA117450F5C00FC2060 /* Default-568h@2x.png in Resources */,
+				16D6C68517450FEB007B0292 /* Icon.png in Resources */,
+				16D6C68617450FEB007B0292 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +338,7 @@
 				16316C811743D2C500FC2060 /* SimpleKeyChain.m in Sources */,
 				16316C861743D75300FC2060 /* MailMeConfgurationViewController.m in Sources */,
 				16316C891743DD8800FC2060 /* MailMeConfig.m in Sources */,
+				169E1328174662BB0064C834 /* MailMeConnectionTypeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +438,7 @@
 				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../include\"";
 				INFOPLIST_FILE = "MailMe/MailMe-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -444,6 +451,7 @@
 				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../include\"";
 				INFOPLIST_FILE = "MailMe/MailMe-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
