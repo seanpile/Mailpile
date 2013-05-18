@@ -14,7 +14,7 @@
 
 @implementation MailMeConnectionTypeViewController
 
-@synthesize delegate;
+@synthesize delegate, handler;
 
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -29,7 +29,7 @@
     [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
     [delegate setConnectionType:[indexPath row]];
     [[self presentingViewController] dismissViewControllerAnimated:YES
-                                                        completion:nil];
+                                                        completion:handler];
 }
 
 @end

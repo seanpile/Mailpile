@@ -43,8 +43,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *hostLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *passwordLabel;
-@property (weak, nonatomic) IBOutlet UILabel *authLabel;
 @property (weak, nonatomic) IBOutlet UILabel *portLabel;
+@property (weak, nonatomic) IBOutlet UILabel *useAuthLabel;
 
 - (IBAction) saveConfig:(id)sender;
 - (IBAction) removeConfig:(id)sender;

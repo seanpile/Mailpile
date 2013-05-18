@@ -1,0 +1,72 @@
+
+/* Class = "IBUILabel"; text = "Host Name"; ObjectID = "1XJ-80-LAP"; */
+"1XJ-80-LAP.text" = "ホスト名";
+
+/* Class = "IBUILabel"; text = "StartTLS"; ObjectID = "1wN-T7-lSI"; */
+"1wN-T7-lSI.text" = "StartTLS";
+
+/* Class = "IBUILabel"; text = "Server Port"; ObjectID = "7sf-ht-eCn"; */
+"7sf-ht-eCn.text" = "サーバーポート";
+
+/* Class = "IBUILabel"; text = "To:"; ObjectID = "FpC-4l-oQF"; */
+"FpC-4l-oQF.text" = "へ:";
+
+/* Class = "IBUILabel"; text = "Sending"; ObjectID = "GvR-9D-MIS"; */
+"GvR-9D-MIS.text" = "送信";
+
+/* Class = "IBUILabel"; text = "TLS"; ObjectID = "IGr-cw-ZXc"; */
+"IGr-cw-ZXc.text" = "TLS";
+
+/* Class = "IBUIBarButtonItem"; title = "Remove this Account"; ObjectID = "Tdz-CF-0Ni"; */
+"Tdz-CF-0Ni.title" = "このアカウントを削除";
+
+/* Class = "IBUILabel"; text = "Password"; ObjectID = "Vzy-tk-5gK"; */
+"Vzy-tk-5gK.text" = "パスワード";
+
+/* Class = "IBUILabel"; text = "Plain"; ObjectID = "Yn9-pX-mBH"; */
+"Yn9-pX-mBH.text" = "Plain";
+
+/* Class = "IBUINavigationItem"; title = "Configuration"; ObjectID = "ZNi-2r-UPi"; */
+"ZNi-2r-UPi.title" = "設定";
+
+/* Class = "IBUITextField"; placeholder = "Jane Doe"; ObjectID = "baf-C5-1xo"; */
+"baf-C5-1xo.placeholder" = "Jane Doe";
+
+/* Class = "IBUILabel"; text = "Name"; ObjectID = "ceV-7f-8GD"; */
+"ceV-7f-8GD.text" = "名前";
+
+/* Class = "IBUITextField"; placeholder = "me@mail.com"; ObjectID = "enN-a8-zox"; */
+"enN-a8-zox.placeholder" = "me@mail.com";
+
+/* Class = "IBUILabel"; text = "Connection Type"; ObjectID = "ev1-uq-83R"; */
+"ev1-uq-83R.text" = "結合方式";
+
+/* Class = "IBUILabel"; text = "Before you can send mail, you need to configure your outgoing mail client"; ObjectID = "gOQ-OV-yCJ"; */
+"gOQ-OV-yCJ.text" = "あなたがメールを送信する前に、あなたの送信メールクライアントを設定する必要があります";
+
+/* Class = "IBUILabel"; text = "Authentication"; ObjectID = "hDf-gI-Dbf"; */
+"hDf-gI-Dbf.text" = "認証";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Connection Type"; ObjectID = "n2v-IK-Zp1"; */
+"n2v-IK-Zp1.headerTitle" = "結合方式";
+
+/* Class = "IBUIButton"; normalTitle = "Configure"; ObjectID = "o4C-qn-bhH"; */
+"o4C-qn-bhH.normalTitle" = "設定する";
+
+/* Class = "IBUILabel"; text = "Email"; ObjectID = "oBT-wO-Aaa"; */
+"oBT-wO-Aaa.text" = "メール";
+
+/* Class = "IBUINavigationController"; title = "MailMe"; ObjectID = "qxS-hg-egQ"; */
+"qxS-hg-egQ.title" = "MailMe";
+
+/* Class = "IBUINavigationItem"; title = "MailMe"; ObjectID = "srw-lN-mPp"; */
+"srw-lN-mPp.title" = "MailMe";
+
+/* Class = "IBUILabel"; text = "Plain"; ObjectID = "ssJ-bL-phb"; */
+"ssJ-bL-phb.text" = "Plain";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Outgoing Mail Server"; ObjectID = "tr1-s9-yhp"; */
+"tr1-s9-yhp.headerTitle" = "送信メールサーバー";
+
+/* Class = "IBUILabel"; text = "User Name"; ObjectID = "zIP-Af-T6D"; */
+"zIP-Af-T6D.text" = "ユーザー名";

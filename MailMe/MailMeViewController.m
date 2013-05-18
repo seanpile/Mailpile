@@ -20,7 +20,7 @@
 
 @implementation MailMeViewController
 
-@synthesize mailField, emailLabel, sendButton;
+@synthesize mailField, toLabel, configureLabel, configureInfoButton, emailLabel, sendButton;
 @synthesize misconfiguredView, progressView, progressViewIndicator;
 
 - (void) viewDidLoad
@@ -39,6 +39,21 @@
      addGestureRecognizer:doubleTap];
     
     config = [MailMeConfig loadFromKeychain];
+    
+    CGRect f = [toLabel frame];
+    CGPoint fCenter = [toLabel center];
+    [toLabel setFrame:CGRectMake(f.origin.x, f.origin.y, 0.0, f.size.height)];
+    [toLabel sizeToFit];
+    [toLabel setFrame:CGRectApplyAffineTransform([toLabel frame],
+                                                 CGAffineTransformMakeTranslation(0.0, fCenter.y - toLabel.center.y))];
+    
+    CGFloat newSize = [toLabel bounds].size.width + 15.0;
+    CGFloat newEmailScale = 1.0 - newSize / [emailLabel bounds].size.width;
+    [emailLabel setFrame:
+     CGRectApplyAffineTransform([emailLabel frame],
+                                CGAffineTransformConcat(
+                                                        CGAffineTransformMakeScale(newEmailScale, 1.0),
+                                                        CGAffineTransformMakeTranslation(newSize, 0)))];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -51,6 +66,10 @@
     if (email)
     {
         [emailLabel setText:email];
+    }
+    else
+    {
+        [emailLabel setText:@""];
     }
     
     if (!config || ![config isValid])

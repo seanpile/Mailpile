@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "MailMeConfgurationViewController.h"
 
+typedef void(^completion)(void);
+
 @interface MailMeConnectionTypeViewController : UITableViewController
 
 @property (nonatomic, weak) id <MailMeConnectionTypeDelegate> delegate;
+@property (nonatomic, strong) completion handler;
 
 @end

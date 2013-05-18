@@ -1,0 +1,72 @@
+
+/* Class = "IBUILabel"; text = "Host Name"; ObjectID = "1XJ-80-LAP"; */
+"1XJ-80-LAP.text" = "Nombre del Host";
+
+/* Class = "IBUILabel"; text = "StartTLS"; ObjectID = "1wN-T7-lSI"; */
+"1wN-T7-lSI.text" = "StartTLS";
+
+/* Class = "IBUILabel"; text = "Server Port"; ObjectID = "7sf-ht-eCn"; */
+"7sf-ht-eCn.text" = "Puerto del servidor";
+
+/* Class = "IBUILabel"; text = "To:"; ObjectID = "FpC-4l-oQF"; */
+"FpC-4l-oQF.text" = "Para:";
+
+/* Class = "IBUILabel"; text = "Sending"; ObjectID = "GvR-9D-MIS"; */
+"GvR-9D-MIS.text" = "Envío";
+
+/* Class = "IBUILabel"; text = "TLS"; ObjectID = "IGr-cw-ZXc"; */
+"IGr-cw-ZXc.text" = "TLS";
+
+/* Class = "IBUIBarButtonItem"; title = "Remove this Account"; ObjectID = "Tdz-CF-0Ni"; */
+"Tdz-CF-0Ni.title" = "Eliminar a esta cuenta";
+
+/* Class = "IBUILabel"; text = "Password"; ObjectID = "Vzy-tk-5gK"; */
+"Vzy-tk-5gK.text" = "Contraseña";
+
+/* Class = "IBUILabel"; text = "Plain"; ObjectID = "Yn9-pX-mBH"; */
+"Yn9-pX-mBH.text" = "Plain";
+
+/* Class = "IBUINavigationItem"; title = "Configuration"; ObjectID = "ZNi-2r-UPi"; */
+"ZNi-2r-UPi.title" = "Configuración";
+
+/* Class = "IBUITextField"; placeholder = "Jane Doe"; ObjectID = "baf-C5-1xo"; */
+"baf-C5-1xo.placeholder" = "Jane Doe";
+
+/* Class = "IBUILabel"; text = "Name"; ObjectID = "ceV-7f-8GD"; */
+"ceV-7f-8GD.text" = "Nombre";
+
+/* Class = "IBUITextField"; placeholder = "me@mail.com"; ObjectID = "enN-a8-zox"; */
+"enN-a8-zox.placeholder" = "me@mail.com";
+
+/* Class = "IBUILabel"; text = "Connection Type"; ObjectID = "ev1-uq-83R"; */
+"ev1-uq-83R.text" = "Tipo de conexión";
+
+/* Class = "IBUILabel"; text = "Before you can send mail, you need to configure your outgoing mail client"; ObjectID = "gOQ-OV-yCJ"; */
+"gOQ-OV-yCJ.text" = "Para poder enviar correo, debe configurar su cliente de correo saliente";
+
+/* Class = "IBUILabel"; text = "Authentication"; ObjectID = "hDf-gI-Dbf"; */
+"hDf-gI-Dbf.text" = "Autenticación";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Connection Type"; ObjectID = "n2v-IK-Zp1"; */
+"n2v-IK-Zp1.headerTitle" = "Tipo de conexión";
+
+/* Class = "IBUIButton"; normalTitle = "Configure"; ObjectID = "o4C-qn-bhH"; */
+"o4C-qn-bhH.normalTitle" = "Configurar";
+
+/* Class = "IBUILabel"; text = "Email"; ObjectID = "oBT-wO-Aaa"; */
+"oBT-wO-Aaa.text" = "Email";
+
+/* Class = "IBUINavigationController"; title = "MailMe"; ObjectID = "qxS-hg-egQ"; */
+"qxS-hg-egQ.title" = "MailMe";
+
+/* Class = "IBUINavigationItem"; title = "MailMe"; ObjectID = "srw-lN-mPp"; */
+"srw-lN-mPp.title" = "MailMe";
+
+/* Class = "IBUILabel"; text = "Plain"; ObjectID = "ssJ-bL-phb"; */
+"ssJ-bL-phb.text" = "Plain";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Outgoing Mail Server"; ObjectID = "tr1-s9-yhp"; */
+"tr1-s9-yhp.headerTitle" = "Servidor de correo saliente";
+
+/* Class = "IBUILabel"; text = "User Name"; ObjectID = "zIP-Af-T6D"; */
+"zIP-Af-T6D.text" = "Nombre de usuario";

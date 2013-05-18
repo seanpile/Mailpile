@@ -38,6 +38,9 @@ typedef enum
 
 - (void) setFormState:(ConfigurationState)state;
 
+- (void) sizeLabel:(UILabel *)label andTextField:(UITextField *)field;
+- (void) sizeLabels:(NSArray *)labels andTextFields:(NSArray *)fields;
+
 @end
 
 @implementation MailMeConfgurationViewController
@@ -52,7 +55,7 @@ typedef enum
 @synthesize passwordField;
 @synthesize portField;
 @synthesize useAuthField;
-@synthesize nameLabel, emailLabel, hostLabel, usernameLabel, passwordLabel, authLabel, portLabel;
+@synthesize nameLabel, useAuthLabel, emailLabel, hostLabel, usernameLabel, passwordLabel, portLabel;
 @synthesize connectionTypeCell;
 
 
@@ -114,7 +117,7 @@ typedef enum
     [[self navigationController] setToolbarHidden:(config == nil)];
     
     orderedTextFields = @[nameField, emailField, hostField, userNameField, passwordField, portField];
-    labels = @[nameLabel, emailLabel, hostLabel, usernameLabel, passwordLabel, authLabel, portLabel];
+    labels = @[nameLabel, emailLabel, hostLabel, usernameLabel, passwordLabel, useAuthLabel, portLabel];
     
     [nameField setText:[config name]];
     [emailField setText:[config email]];
@@ -137,6 +140,57 @@ typedef enum
     else
     {
         [self setFormState:HeaderFieldsPopulated];
+    }
+    
+    // Align these columns
+    [self sizeLabels:[NSArray arrayWithObjects:nameLabel, emailLabel, nil]
+       andTextFields:[NSArray arrayWithObjects:nameField, emailField, nil]];
+    
+    [self sizeLabel:hostLabel
+       andTextField:hostField];
+    [self sizeLabel:usernameLabel
+       andTextField:userNameField];
+    [self sizeLabel:passwordLabel
+       andTextField:passwordField];
+    [self sizeLabel:useAuthLabel
+       andTextField:nil];
+    [self sizeLabel:portLabel
+       andTextField:portField];
+}
+
+- (void) sizeLabel:(UILabel *)label andTextField:(UITextField *)field;
+{
+    [self sizeLabels:[NSArray arrayWithObject:label]
+       andTextFields:(field == nil ? [NSArray array] : [NSArray arrayWithObject:field])];
+}
+
+- (void) sizeLabels:(NSArray *)lbs andTextFields:(NSArray *)fields;
+{
+    CGFloat maxWidth = 0.0;
+    for (UILabel *l in lbs)
+    {
+        // First shrink to 0 width, and then size to fit
+        CGRect f = [l frame];
+        [l setFrame:CGRectMake(f.origin.x, f.origin.y, 0.0, f.size.height)];
+        [l sizeToFit];
+        CGFloat width = [l frame].size.width;
+        if (width > maxWidth)
+        {
+            maxWidth = width;
+        }
+    }
+    
+    
+    CGFloat newSize = maxWidth + 20.0;
+    
+    for (UITextField *tf in fields)
+    {
+        CGFloat newTextFieldScale = 1.0 - newSize / [tf frame].size.width;
+        [tf setFrame:
+         CGRectApplyAffineTransform([tf frame],
+                                    CGAffineTransformConcat(
+                                                            CGAffineTransformMakeScale(newTextFieldScale, 1.0),
+                                                            CGAffineTransformMakeTranslation(newSize, 0)))];
     }
 }
 
@@ -232,6 +286,11 @@ typedef enum
     }
 }
 
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
 - (BOOL) textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
@@ -308,6 +367,7 @@ typedef enum
 
 - (IBAction) saveConfig:(id)sender
 {
+    [[self navigationItem] setPrompt:nil];
     [[self view] endEditing:YES];
     [self setFormState:TestingConnection];
     
@@ -363,7 +423,7 @@ typedef enum
             {
                 [spinnerView stopAnimating];
                 [[self navigationItem] setTitleView:nil];
-                [[self navigationItem] setTitle:NSLocalizedString(@"Connection Failed", "Title for when the connection fails")];
+                [[self navigationItem] setPrompt:NSLocalizedString(@"Connection Failed!", "Title for when the connection fails")];
                 [self setFormState:HeaderFieldsPopulated];
             }
         });
@@ -372,8 +432,16 @@ typedef enum
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    [[self view] endEditing:YES];
     MailMeConnectionTypeViewController *ctv = [segue destinationViewController];
     [ctv setDelegate:self];
+    [ctv setHandler: ^{
+        NSIndexPath *indexPathForCell = [[self tableView] indexPathForCell:connectionTypeCell];
+        MWLogDebug(@"indexPath = %@", indexPathForCell);
+        [[self tableView] scrollToRowAtIndexPath:indexPathForCell
+                                atScrollPosition:UITableViewScrollPositionNone
+                                        animated:YES];
+    }];
 }
 
 - (IBAction) removeConfig:(id)sender
