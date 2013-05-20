@@ -6,10 +6,30 @@
 //  Copyright (c) 2013 Sean Dawson. All rights reserved.
 //
 
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <MessageUI/MessageUI.h>
 #import <MailCore/MailCore.h>
 #import "MailMeViewController.h"
 #import "MailMeConfig.h"
 #import "MWLogging.h"
+#import "UIUtil.h"
+
+static void PrintReachabilityFlags(SCNetworkReachabilityFlags flags, const char *comment)
+{
+    MWLogDebug(@"Reachability Flag Status: %c%c %c%c%c%c%c%c%c %s\n",
+               (flags & kSCNetworkReachabilityFlagsIsWWAN)               ? 'W' : '-',
+               (flags & kSCNetworkReachabilityFlagsReachable)            ? 'R' : '-',
+               
+               (flags & kSCNetworkReachabilityFlagsTransientConnection)  ? 't' : '-',
+               (flags & kSCNetworkReachabilityFlagsConnectionRequired)   ? 'c' : '-',
+               (flags & kSCNetworkReachabilityFlagsConnectionOnTraffic)  ? 'C' : '-',
+               (flags & kSCNetworkReachabilityFlagsInterventionRequired) ? 'i' : '-',
+               (flags & kSCNetworkReachabilityFlagsConnectionOnDemand)   ? 'D' : '-',
+               (flags & kSCNetworkReachabilityFlagsIsLocalAddress)       ? 'l' : '-',
+               (flags & kSCNetworkReachabilityFlagsIsDirect)             ? 'd' : '-',
+               comment
+               );
+}
 
 @interface MailMeViewController ()
 {
@@ -20,8 +40,9 @@
 
 @implementation MailMeViewController
 
-@synthesize mailField, toLabel, configureLabel, configureInfoButton, emailLabel, sendButton;
-@synthesize misconfiguredView, progressView, progressViewIndicator;
+@synthesize mailField, toLabel, configureLabel, emailLabel, sendButton;
+@synthesize misconfiguredView;
+@synthesize configureButton;
 
 - (void) viewDidLoad
 {
@@ -112,17 +133,23 @@
 
 - (IBAction) sendEmail:(id)sender
 {
+    NSString *currentTitle = [[self navigationItem] title];
+    
+    UINavigationBar *nav = [[self navigationController] navigationBar];
+    [[self navigationItem] setTitleView:
+     [UIUtil createSpinnerViewWithLabel:NSLocalizedString(@"Sending email ", @"Sending email ")
+                                 forNav:nav]];
+    
     [mailField resignFirstResponder];
     [mailField setEditable:NO];
     [sendButton setEnabled:NO];
-    [progressView setAlpha:1.0];
-    [progressViewIndicator startAnimating];
+    [configureButton setEnabled:NO];
     
     NSString *messageBody = [[mailField text] copy];
     
     if ([messageBody length] == 0)
     {
-        MWLogDebug(@"Won't send an empty email, bailing");
+        MWLogDebug(@"Won 't send an empty email, bailing");
         return;
     }
     
@@ -133,7 +160,7 @@
     }
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        MWLogInfo(@"Attempting to send with config: %@", config);
+        MWLogDebug(@"Attempting to send with config: %@", config);
         
         CTCoreMessage *msg = [[CTCoreMessage alloc] init];
         CTCoreAddress *address = [CTCoreAddress addressWithName:[config name]
@@ -168,13 +195,89 @@
         
         // Dispatch back to the main queue to update the UI
         dispatch_async(dispatch_get_main_queue(), ^{
-            [progressViewIndicator stopAnimating];
             [sendButton setEnabled:YES];
-            [progressView setAlpha:0.0];
+            [configureButton setEnabled:YES];
             [mailField setEditable:YES];
-            [mailField setText:@""];
+            
+            if (success)
+            {
+                [[self navigationItem] setTitleView:nil];
+                [[self navigationItem] setTitle:currentTitle];
+                [[self navigationItem] setPrompt:NSLocalizedString(@"Email sent!", "Email was successfully sent")];
+                
+                [mailField setText:@""];
+                
+                // Clear the prompt after 2 seconds
+                double delayInSeconds = 2.0;
+                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
+                    [[self navigationItem] setPrompt:nil];
+                });
+            }
+            else
+            {
+                [[self navigationItem] setTitleView:nil];
+                [[self navigationItem] setTitle:currentTitle];
+                
+                UIAlertView *av = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Delivery Error", @"Indicates that an error in delivery occurred")
+                                                             message:[error localizedDescription]
+                                                            delegate:self
+                                                   cancelButtonTitle:@"Cancel"
+                                                   otherButtonTitles:@"Send Later", nil];
+                [av show];
+            }
         });
     });
+}
+
+# pragma mark -
+# pragma mark UIAlertViewDelegate
+
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    // Cancel button
+    if (buttonIndex == 0)
+    {
+        return;
+    }
+    
+    MFMailComposeViewController *mvc = [[MFMailComposeViewController alloc] init];
+    [mvc setSubject:[mailField text]];
+    [mvc setMessageBody:@""
+                 isHTML:NO];
+    [mvc setToRecipients:[NSArray arrayWithObject:[config email]]];
+    [mvc setMailComposeDelegate:self];
+    
+    [self presentViewController:mvc
+                       animated:YES
+                     completion:nil];
+}
+
+# pragma mark -
+# pragma mark MFMailComposeViewControllerDelegate
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [self dismissViewControllerAnimated:YES
+                             completion: ^{
+                                 [mailField setText:@""];
+                                 
+                                 [[self navigationItem] setTitleView:nil];
+                                 //[[self navigationItem] setTitle:currentTitle];
+                                 
+                                 if (result == MFMailComposeResultSaved ||
+                                     result == MFMailComposeResultSent)
+                                 {
+                                     [[self navigationItem] setPrompt:NSLocalizedString(@"Email saved for later", "Email saved for later")];
+                                     
+                                     // Clear the prompt after 2 seconds
+                                     double delayInSeconds = 2.0;
+                                     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                                     dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
+                                         [[self navigationItem] setPrompt:nil];
+                                     });
+                                 }
+                             }];
 }
 
 @end

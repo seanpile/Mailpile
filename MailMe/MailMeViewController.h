@@ -7,21 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 #import "MailMeConfgurationViewController.h"
 
-@interface MailMeViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, MailMeConfigurationDelegate>
+@interface MailMeViewController : UITableViewController
+<UITableViewDataSource, UITableViewDelegate,
+UITextViewDelegate, MailMeConfigurationDelegate,
+UIAlertViewDelegate, MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *mailField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sendButton;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *toLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *configureButton;
 
 @property (weak, nonatomic) IBOutlet UIView *misconfiguredView;
-@property (weak, nonatomic) IBOutlet UIView *progressView;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *progressViewIndicator;
-
 @property (weak, nonatomic) IBOutlet UILabel *configureLabel;
-@property (weak, nonatomic) IBOutlet UIButton *configureInfoButton;
 
 - (IBAction) sendEmail:(id)sender;
 

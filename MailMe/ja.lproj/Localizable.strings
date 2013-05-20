@@ -1,9 +1,18 @@
-/* 
-  Localizable.strings
-  MailMe
+/* Indicates that an error in delivery occurred */
+"Connection Error" = "";
 
-  Created by Sean Dawson on 2013-05-17.
-  Copyright (c) 2013 Sean Dawson. All rights reserved.
-*/
-"Connection Failed!" = "接続に失敗しました";
+/* Indicates that an error in delivery occurred */
+"Delivery Error" = "";
+
+/* Email saved for later */
+"Email saved for later" = "";
+
+/* Email was successfully sent */
+"Email sent!" = "";
+
+/* Sending email */
+"Sending email" = "";
+
+/* Testing Connection */
+"Testing Connection" = "";
 

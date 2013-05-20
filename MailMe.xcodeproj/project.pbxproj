@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1600827B174A643F00927ACC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1600827A174A643F00927ACC /* MessageUI.framework */; };
+		1605793C1748653F00255AA0 /* UIUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1605793B1748653F00255AA0 /* UIUtil.m */; };
 		16271ECE174318DC0018808F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16271ECD174318DC0018808F /* UIKit.framework */; };
 		16271ED0174318DC0018808F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16271ECF174318DC0018808F /* Foundation.framework */; };
 		16271ED2174318DC0018808F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16271ED1174318DC0018808F /* CoreGraphics.framework */; };
@@ -73,12 +75,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1600827A174A643F00927ACC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		1605793A1748653F00255AA0 /* UIUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUtil.h; sourceTree = "<group>"; };
+		1605793B1748653F00255AA0 /* UIUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUtil.m; sourceTree = "<group>"; };
+		1606B35C174911350053B70D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1606B35D174911380053B70D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		16271ECA174318DC0018808F /* MailMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MailMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16271ECD174318DC0018808F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		16271ECF174318DC0018808F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		16271ED1174318DC0018808F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		16271ED5174318DC0018808F /* MailMe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MailMe-Info.plist"; sourceTree = "<group>"; };
-		16271ED7174318DC0018808F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		16271ED9174318DD0018808F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		16271EDB174318DD0018808F /* MailMe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MailMe-Prefix.pch"; sourceTree = "<group>"; };
 		16271EDC174318DD0018808F /* MailMeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MailMeAppDelegate.h; sourceTree = "<group>"; };
@@ -114,13 +120,12 @@
 		169E132B17467BA60064C834 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MailMeStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		169E132F17467C420064C834 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MailMeStoryboard_iPhone.strings; sourceTree = "<group>"; };
 		169E133117467C420064C834 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		169E13351747061D0064C834 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		169E1337174706230064C834 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		169E13351747061D0064C834 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		169E1338174706F30064C834 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/MailMeStoryboard_iPhone.strings; sourceTree = "<group>"; };
-		169E133A174706F30064C834 /* es */ = {isa = PBXFileReference; lastKnownFileType = file; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		169E133A174706F30064C834 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		169E133B174706F30064C834 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		169E133C17470A600064C834 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MailMeStoryboard_iPhone.strings; sourceTree = "<group>"; };
-		169E133E17470A600064C834 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		169E133E17470A600064C834 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		169E133F17470A600064C834 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		16D6C68317450FEB007B0292 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		16D6C68417450FEB007B0292 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
@@ -131,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1600827B174A643F00927ACC /* MessageUI.framework in Frameworks */,
 				16316C831743D30A00FC2060 /* Security.framework in Frameworks */,
 				16316C791743CEFE00FC2060 /* CFNetwork.framework in Frameworks */,
 				16316C771743CEF800FC2060 /* libiconv.dylib in Frameworks */,
@@ -168,6 +174,7 @@
 		16271ECC174318DC0018808F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1600827A174A643F00927ACC /* MessageUI.framework */,
 				16316C821743D30A00FC2060 /* Security.framework */,
 				16316C781743CEFE00FC2060 /* CFNetwork.framework */,
 				16316C761743CEF800FC2060 /* libiconv.dylib */,
@@ -199,6 +206,8 @@
 				16316C881743DD8800FC2060 /* MailMeConfig.m */,
 				16316C7F1743D2C500FC2060 /* SimpleKeyChain.h */,
 				16316C801743D2C500FC2060 /* SimpleKeyChain.m */,
+				1605793A1748653F00255AA0 /* UIUtil.h */,
+				1605793B1748653F00255AA0 /* UIUtil.m */,
 				16271ED4174318DC0018808F /* Supporting Files */,
 			);
 			path = MailMe;
@@ -356,6 +365,7 @@
 				16316C861743D75300FC2060 /* MailMeConfgurationViewController.m in Sources */,
 				16316C891743DD8800FC2060 /* MailMeConfig.m in Sources */,
 				169E1328174662BB0064C834 /* MailMeConnectionTypeViewController.m in Sources */,
+				1605793C1748653F00255AA0 /* UIUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,10 +383,10 @@
 		16271ED6174318DC0018808F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				16271ED7174318DC0018808F /* en */,
 				169E133117467C420064C834 /* fr */,
 				169E133B174706F30064C834 /* es */,
 				169E133F17470A600064C834 /* ja */,
+				1606B35D174911380053B70D /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -396,9 +406,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				169E13351747061D0064C834 /* fr */,
-				169E1337174706230064C834 /* en */,
 				169E133A174706F30064C834 /* es */,
 				169E133E17470A600064C834 /* ja */,
+				1606B35C174911350053B70D /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -418,7 +428,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Sean Dawson (TKM9C8K4W9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Sean Dawson (TKM9C8K4W9)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -433,6 +444,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "44A1AB70-E54D-46D6-A0E2-EC36C49251C6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "44A1AB70-E54D-46D6-A0E2-EC36C49251C6";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -450,7 +463,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Sean Dawson (TKM9C8K4W9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Sean Dawson (TKM9C8K4W9)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -458,6 +472,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "44A1AB70-E54D-46D6-A0E2-EC36C49251C6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "44A1AB70-E54D-46D6-A0E2-EC36C49251C6";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -467,11 +483,15 @@
 		16271EF1174318DD0018808F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MailMe/MailMe-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../include\"";
 				INFOPLIST_FILE = "MailMe/MailMe-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -480,11 +500,16 @@
 		16271EF2174318DD0018808F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MailMe/MailMe-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
 				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../include\"";
 				INFOPLIST_FILE = "MailMe/MailMe-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

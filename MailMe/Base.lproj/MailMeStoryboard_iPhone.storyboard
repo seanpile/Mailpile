@@ -56,25 +56,6 @@
                             <rect key="frame" x="0.0" y="109" width="320" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <view alpha="0.0" contentMode="scaleToFill" id="LKE-Xd-214" userLabel="Progress View">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" id="G2L-vV-VR7">
-                                            <rect key="frame" x="99" y="9" width="37" height="37"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="color" red="0.32156862749999998" green="0.40000000000000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        </activityIndicatorView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sending" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GvR-9D-MIS">
-                                            <rect key="frame" x="128" y="14" width="92" height="27"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.32156862749999998" green="0.40000000000000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
                                 <view contentMode="scaleToFill" id="sYP-NG-8ch" userLabel="Misconfigured View">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -152,12 +133,11 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
                     <connections>
+                        <outlet property="configureButton" destination="2xV-uo-NTa" id="TDY-Hv-FiF"/>
                         <outlet property="configureLabel" destination="gOQ-OV-yCJ" id="AQR-66-FZa"/>
                         <outlet property="emailLabel" destination="C92-82-omh" id="iAE-4Q-57F"/>
                         <outlet property="mailField" destination="Pxs-k4-aqy" id="eIj-rv-4So"/>
                         <outlet property="misconfiguredView" destination="sYP-NG-8ch" id="BzQ-K4-nqY"/>
-                        <outlet property="progressView" destination="LKE-Xd-214" id="Xxq-nI-KcV"/>
-                        <outlet property="progressViewIndicator" destination="G2L-vV-VR7" id="s01-YR-2bb"/>
                         <outlet property="sendButton" destination="8cR-ci-x1E" id="7HS-Lc-CAP"/>
                         <outlet property="toLabel" destination="FpC-4l-oQF" id="9p0-Ww-J6A"/>
                     </connections>
@@ -561,13 +541,11 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MailMeViewController.h"/>
             <relationships>
                 <relationship kind="action" name="sendEmail:"/>
-                <relationship kind="outlet" name="configureInfoButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="configureButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="configureLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="mailField" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="misconfiguredView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="progressView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="progressViewIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="sendButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="toLabel" candidateClass="UILabel"/>
             </relationships>

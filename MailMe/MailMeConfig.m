@@ -50,6 +50,8 @@
 
 - (NSString *) description
 {
+    // Note; do not log password!
+    
     NSMutableString *desc = [[NSMutableString alloc] init];
     [desc appendString:@"MailMeConfig = {"];
     [desc appendString:[NSString stringWithFormat:@"name = \"%@\", ", name]];
@@ -70,7 +72,7 @@
 
 - (void) saveToKeychain
 {
-    MWLogDebug(@"Saving config to keychain: %@", self);
+    MWLogInfo(@"Saving config to keychain: %@", self);
     [SimpleKeychain save:@"MailMeConfig"
                     data:self];
 }
@@ -83,7 +85,7 @@
 + (MailMeConfig *) loadFromKeychain
 {
     MailMeConfig *config = [SimpleKeychain load:@"MailMeConfig"];
-    MWLogDebug(@"Loading config from keychain: %@", config);
+    MWLogInfo(@"Loading config from keychain: %@", config);
     return config;
 }
 

@@ -12,6 +12,7 @@
 #import "MailMeConnectionTypeViewController.h"
 #import "MailMeConfig.h"
 #import "SimpleKeyChain.h"
+#import "UIUtil.h"
 
 static NSString *const kHost = @"Host";
 static NSString *const kUser = @"User";
@@ -196,7 +197,6 @@ typedef enum
 
 - (void) viewWillDisappear:(BOOL)animated
 {
-    MWLogDebug(@"viewWillDisappear");
     hasDisappeared = YES;
 }
 
@@ -286,7 +286,7 @@ typedef enum
     }
 }
 
-- (BOOL)canBecomeFirstResponder
+- (BOOL) canBecomeFirstResponder
 {
     return YES;
 }
@@ -367,6 +367,8 @@ typedef enum
 
 - (IBAction) saveConfig:(id)sender
 {
+    NSString *currentTitle = [[self navigationItem] title];
+    
     [[self navigationItem] setPrompt:nil];
     [[self view] endEditing:YES];
     [self setFormState:TestingConnection];
@@ -381,9 +383,11 @@ typedef enum
     [c setConnectionType:connectionType];
     [c setPort:[[portField text] integerValue]];
     
-    UIActivityIndicatorView *spinnerView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    [[self navigationItem] setTitleView:spinnerView];
-    [spinnerView startAnimating];
+    UINavigationBar *nav = [[self navigationController] navigationBar];
+    
+    [[self navigationItem] setTitleView:
+     [UIUtil createSpinnerViewWithLabel:NSLocalizedString(@"Testing Connection", @"Testing Connection")
+                                 forNav:nav]];
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSError *error;
@@ -421,10 +425,16 @@ typedef enum
             }
             else
             {
-                [spinnerView stopAnimating];
                 [[self navigationItem] setTitleView:nil];
-                [[self navigationItem] setPrompt:NSLocalizedString(@"Connection Failed!", "Title for when the connection fails")];
+                [[self navigationItem] setTitle:currentTitle];
                 [self setFormState:HeaderFieldsPopulated];
+                
+                UIAlertView *av = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connection Error", @"Indicates that an error in delivery occurred")
+                                                             message:[error localizedDescription]
+                                                            delegate:nil
+                                                   cancelButtonTitle:@"OK"
+                                                   otherButtonTitles:nil];
+                [av show];
             }
         });
     });
