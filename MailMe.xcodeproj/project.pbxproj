@@ -16,6 +16,8 @@
 		16271EDA174318DD0018808F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16271ED9174318DD0018808F /* main.m */; };
 		16271EDE174318DD0018808F /* MailMeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16271EDD174318DD0018808F /* MailMeAppDelegate.m */; };
 		16271EED174318DD0018808F /* MailMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16271EEC174318DD0018808F /* MailMeViewController.m */; };
+		162B3F12174BBC6400265BD6 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 162B3F10174BBC6400265BD6 /* LICENSE.txt */; };
+		162B3F13174BBC6400265BD6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 162B3F11174BBC6400265BD6 /* README.md */; };
 		16316C4717431C5400FC2060 /* MailMeStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16316C4517431C5400FC2060 /* MailMeStoryboard_iPhone.storyboard */; };
 		16316C491743212000FC2060 /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 16316C481743212000FC2060 /* Delete.png */; };
 		16316C4B1743212A00FC2060 /* Delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16316C4A1743212A00FC2060 /* Delete@2x.png */; };
@@ -91,8 +93,8 @@
 		16271EDD174318DD0018808F /* MailMeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MailMeAppDelegate.m; sourceTree = "<group>"; };
 		16271EEB174318DD0018808F /* MailMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MailMeViewController.h; sourceTree = "<group>"; };
 		16271EEC174318DD0018808F /* MailMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MailMeViewController.m; sourceTree = "<group>"; };
-		162B3F0C174BBBCD00265BD6 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		162B3F0D174BBBCD00265BD6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		162B3F10174BBC6400265BD6 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		162B3F11174BBC6400265BD6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		16316C481743212000FC2060 /* Delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Delete.png; sourceTree = "<group>"; };
 		16316C4A1743212A00FC2060 /* Delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Delete@2x.png"; sourceTree = "<group>"; };
 		16316C4C1743BC7700FC2060 /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
@@ -158,6 +160,8 @@
 		16271EC1174318DC0018808F = {
 			isa = PBXGroup;
 			children = (
+				162B3F10174BBC6400265BD6 /* LICENSE.txt */,
+				162B3F11174BBC6400265BD6 /* README.md */,
 				16316C5E1743CE7100FC2060 /* MailCore.xcodeproj */,
 				16271ED3174318DC0018808F /* MailMe */,
 				16271ECC174318DC0018808F /* Frameworks */,
@@ -218,8 +222,6 @@
 		16271ED4174318DC0018808F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				162B3F0C174BBBCD00265BD6 /* LICENSE.txt */,
-				162B3F0D174BBBCD00265BD6 /* README.md */,
 				16D6C68317450FEB007B0292 /* Icon.png */,
 				16D6C68417450FEB007B0292 /* Icon@2x.png */,
 				16316C90174503AD00FC2060 /* iTunesArtwork.png */,
@@ -351,6 +353,8 @@
 				16D6C68517450FEB007B0292 /* Icon.png in Resources */,
 				16D6C68617450FEB007B0292 /* Icon@2x.png in Resources */,
 				169E13341747061D0064C834 /* Localizable.strings in Resources */,
+				162B3F12174BBC6400265BD6 /* LICENSE.txt in Resources */,
+				162B3F13174BBC6400265BD6 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
