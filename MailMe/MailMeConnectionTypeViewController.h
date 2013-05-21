@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 Sean Dawson. All rights reserved.
 //
 
+#ifndef _MailMeConnectionTypeViewController_h
+#define _MailMeConnectionTypeViewController_h
+
 #import <UIKit/UIKit.h>
 #import "MailMeConfgurationViewController.h"
 
@@ -17,3 +20,5 @@ typedef void(^completion)(void);
 @property (nonatomic, strong) completion handler;
 
 @end
+
+#endif

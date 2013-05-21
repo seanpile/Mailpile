@@ -401,7 +401,7 @@ typedef enum
         
         if (!success)
         {
-            MWLogError([error localizedDescription]);
+            MWLogError(@"Error = %d: %@", error.code, error.localizedDescription);
         }
         else
         {
@@ -429,8 +429,23 @@ typedef enum
                 [[self navigationItem] setTitle:currentTitle];
                 [self setFormState:HeaderFieldsPopulated];
                 
+                NSString *errorMessage;
+                if (error.code == 17)
+                {
+                    errorMessage = NSLocalizedString(@"Invalid Username or Password", @"Invalid Username or Password");
+                }
+                else if (error.code == 25)
+                {
+                    errorMessage = NSLocalizedString(@"Connection Refused", @"Connection Refused");
+                }
+                else
+                {
+                    errorMessage = [error localizedDescription];
+                }
+                
+                
                 UIAlertView *av = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connection Error", @"Indicates that an error in delivery occurred")
-                                                             message:[error localizedDescription]
+                                                             message:errorMessage
                                                             delegate:nil
                                                    cancelButtonTitle:@"OK"
                                                    otherButtonTitles:nil];

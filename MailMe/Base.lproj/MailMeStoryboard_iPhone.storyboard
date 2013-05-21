@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-388" y="20"/>
         </scene>
-        <!--Mail Me View Controller - MailMe-->
+        <!--Mail Me View Controller - Mailpile-->
         <scene sceneID="RKM-4d-Hmz">
             <objects>
                 <tableViewController id="YUd-JI-Rwf" customClass="MailMeViewController" sceneMemberID="viewController">
@@ -117,7 +117,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="MailMe" id="srw-lN-mPp">
+                    <navigationItem key="navigationItem" title="Mailpile" id="srw-lN-mPp">
                         <barButtonItem key="leftBarButtonItem" image="Settings.png" id="2xV-uo-NTa">
                             <connections>
                                 <segue destination="Cjd-CY-PYo" kind="push" identifier="ConfigureMail" id="aYQ-hb-DVh"/>

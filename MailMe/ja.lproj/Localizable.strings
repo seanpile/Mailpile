@@ -1,18 +1,30 @@
-/* Indicates that an error in delivery occurred */
-"Connection Error" = "";
+/* Cancel message */
+"Cancel" = "キャンセル";
 
 /* Indicates that an error in delivery occurred */
-"Delivery Error" = "";
+"Connection Error" = "接続エラー";
+
+/* Connection could not be established */
+"Connection Refused" = "接続が拒否されました";
+
+/* Indicates that an error in delivery occurred */
+"Delivery Error" = "送信エラー";
 
 /* Email saved for later */
-"Email saved for later" = "";
+"Email saved for later" = "後のために保存メール";
 
 /* Email was successfully sent */
-"Email sent!" = "";
+"Email sent!" = "メール送信";
+
+/* Invalid credentials */
+"Invalid Username or Password" = "無効なユーザー名またはパスワード";
 
 /* Sending email */
-"Sending email" = "";
+"Sending email" = "電子メールの送信";
+
+/* Send message for later delivery */
+"Send Later" = "後で送信";
 
 /* Testing Connection */
-"Testing Connection" = "";
+"Testing Connection" = "テスト接続";
 

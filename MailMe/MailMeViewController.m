@@ -6,30 +6,12 @@
 //  Copyright (c) 2013 Sean Dawson. All rights reserved.
 //
 
-#import <SystemConfiguration/SystemConfiguration.h>
 #import <MessageUI/MessageUI.h>
 #import <MailCore/MailCore.h>
 #import "MailMeViewController.h"
 #import "MailMeConfig.h"
 #import "MWLogging.h"
 #import "UIUtil.h"
-
-static void PrintReachabilityFlags(SCNetworkReachabilityFlags flags, const char *comment)
-{
-    MWLogDebug(@"Reachability Flag Status: %c%c %c%c%c%c%c%c%c %s\n",
-               (flags & kSCNetworkReachabilityFlagsIsWWAN)               ? 'W' : '-',
-               (flags & kSCNetworkReachabilityFlagsReachable)            ? 'R' : '-',
-               
-               (flags & kSCNetworkReachabilityFlagsTransientConnection)  ? 't' : '-',
-               (flags & kSCNetworkReachabilityFlagsConnectionRequired)   ? 'c' : '-',
-               (flags & kSCNetworkReachabilityFlagsConnectionOnTraffic)  ? 'C' : '-',
-               (flags & kSCNetworkReachabilityFlagsInterventionRequired) ? 'i' : '-',
-               (flags & kSCNetworkReachabilityFlagsConnectionOnDemand)   ? 'D' : '-',
-               (flags & kSCNetworkReachabilityFlagsIsLocalAddress)       ? 'l' : '-',
-               (flags & kSCNetworkReachabilityFlagsIsDirect)             ? 'd' : '-',
-               comment
-               );
-}
 
 @interface MailMeViewController ()
 {
@@ -170,8 +152,6 @@ static void PrintReachabilityFlags(SCNetworkReachabilityFlags flags, const char 
         [msg setSubject:messageBody];
         [msg setBody:@""];
         
-        MWLogDebug(@"Created test message, now attempting to send");
-        
         NSError *error;
         BOOL success = [CTSMTPConnection sendMessage:msg
                                               server:[config hostname]
@@ -186,7 +166,7 @@ static void PrintReachabilityFlags(SCNetworkReachabilityFlags flags, const char 
         
         if (!success)
         {
-            MWLogError([error localizedDescription]);
+            MWLogError(@"Error = %d: %@", error.code, error.localizedDescription);
         }
         else
         {
@@ -219,11 +199,22 @@ static void PrintReachabilityFlags(SCNetworkReachabilityFlags flags, const char 
                 [[self navigationItem] setTitleView:nil];
                 [[self navigationItem] setTitle:currentTitle];
                 
+                NSString *errorMessage;
+                if (error.code == 17)
+                {
+                    errorMessage = NSLocalizedString(@"Invalid Username or Password", @"Invalid Username or Password");
+                } else if (error.code == 25)
+                {
+                    errorMessage = NSLocalizedString(@"Connection Refused", @"Connection Refused");
+                } else {
+                    errorMessage = [error localizedDescription];
+                }
+                
                 UIAlertView *av = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Delivery Error", @"Indicates that an error in delivery occurred")
-                                                             message:[error localizedDescription]
+                                                             message:errorMessage
                                                             delegate:self
-                                                   cancelButtonTitle:@"Cancel"
-                                                   otherButtonTitles:@"Send Later", nil];
+                                                   cancelButtonTitle:NSLocalizedString(@"Cancel", @"Cancel message")
+                                                   otherButtonTitles:NSLocalizedString(@"Send Later", @"Send email for later delivery"), nil];
                 [av show];
             }
         });
@@ -263,7 +254,6 @@ static void PrintReachabilityFlags(SCNetworkReachabilityFlags flags, const char 
                                  [mailField setText:@""];
                                  
                                  [[self navigationItem] setTitleView:nil];
-                                 //[[self navigationItem] setTitle:currentTitle];
                                  
                                  if (result == MFMailComposeResultSaved ||
                                      result == MFMailComposeResultSent)

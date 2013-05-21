@@ -57,6 +57,9 @@
  
  */
 
+#ifndef _MWLogging_h
+#define _MWLogging_h
+
 #import <Foundation/Foundation.h>
 
 // By default, in non-debug mode we want to disable any logging
@@ -117,4 +120,6 @@ void MWLogInfo(NSString *format, ...);
 void MWLogDebug(NSString *format, ...);
 #else
 #define MWLogDebug(...)
+#endif
+
 #endif

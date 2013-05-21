@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 Sean Dawson. All rights reserved.
 //
 
+#ifndef _MailMeConfig_h
+#define _MailMeConfig_h
+
 #import <Foundation/Foundation.h>
 #import <MailCore/MailCore.h>
 
@@ -26,3 +29,5 @@
 - (BOOL)           isValid;
 
 @end
+
+#endif

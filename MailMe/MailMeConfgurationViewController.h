@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 Sean Dawson. All rights reserved.
 //
 
+#ifndef _MailMeConfigurationDelegate_h
+#define _MailMeConfigurationDelegate_h
+
 #import <UIKit/UIKit.h>
 #import <MailCore/MailCore.h>
 #import "MailMeConfig.h"
@@ -50,3 +53,5 @@
 - (IBAction) removeConfig:(id)sender;
 
 @end
+
+#endif

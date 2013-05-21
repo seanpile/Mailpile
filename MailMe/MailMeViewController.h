@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 Sean Dawson. All rights reserved.
 //
 
+#ifndef _MailMeViewController_h
+#define _MailMeViewController_h
+
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 #import "MailMeConfgurationViewController.h"
@@ -27,3 +30,5 @@ UIAlertViewDelegate, MFMailComposeViewControllerDelegate>
 - (IBAction) sendEmail:(id)sender;
 
 @end
+
+#endif

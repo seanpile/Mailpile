@@ -1,17 +1,29 @@
-/* Indicates that an error in delivery occurred */
-"Connection Error" = "";
+/* Cancel message */
+"Cancel" = "Cancelar";
 
 /* Indicates that an error in delivery occurred */
-"Delivery Error" = "";
+"Connection Error" = "Error de conexión";
+
+/* Connection could not be established */
+"Connection Refused" = "Conexión rechazada";
+
+/* Indicates that an error in delivery occurred */
+"Delivery Error" = "Error de entrega";
 
 /* Email saved for later */
-"Email saved for later" = "";
+"Email saved for later" = "Email guardado para más adelante";
 
 /* Email was successfully sent */
-"Email sent!" = "";
+"Email sent!" = "Correo electrónico enviado";
 
 /* Sending email */
-"Sending email" = "";
+"Sending email" = "Envío de correo electrónico";
+
+/* Send message for later delivery */
+"Send Later" = "Enviar más tarde";
+
+/* Invalid credentials */
+"Invalid Username or Password" = "Nombre de usuario o contraseña no válido";
 
 /* Testing Connection */
-"Testing Connection" = "";
+"Testing Connection" = "Prueba de conexión";
